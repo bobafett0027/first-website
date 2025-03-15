@@ -1,6 +1,25 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Flexbox for Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Container for layout */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -14,12 +33,68 @@ body {
 h1, h2, h3 {
     font-weight: 600;
     color: #333;
+    margin: 0;
+    font-size: 28px;
 }
 
 /* Paragraphs */
 p {
     font-weight: 300;
     color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+/* Main Layout using Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Profile Details */
+.profile-details {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Details Header */
+.profile-details h2 {
+    color: #007BFF;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Profile Details Content */
+.profile-details p {
+    font-size: 18px;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    color: #007BFF;
+    font-size: 20px;
+    margin: 0;
+}
+
+section p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Profile Details Footer */
+.profile-details footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 /* Profile Image */
@@ -35,7 +110,11 @@ img {
 ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 
 ul li {
     background: #007BFF;
@@ -49,11 +128,60 @@ ul li {
 
 /* Footer */
 footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 20px;
     font-size: 14px;
     color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: #333;
+    border-radius: 10px;
 }
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
 
 footer p {
     margin: 5px 0;
 }
+
+
+/* --- RESPONSIVENESS --- */
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr; /* Stack sections on top of each other */
+    }
+
+    ul {
+        flex-direction: column; /* Make list items vertical */
+    }
+
+    ul li {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+
+/* Animation for fading in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.show {
+    opacity: 1;
+}
+    
+   /* In the CSS file, we have defined the styles for the header, container, body, headings, paragraphs, main content, profile details, profile details header, profile details content, profile details footer, profile image, favorite activities list, and footer. 
+    We have also added media queries for responsiveness and animations for fading in. 
+    Step 5: Create the JavaScript File 
+    Create a new file named  script.js  and add the following JavaScript code:
